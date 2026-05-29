@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador | Gota Certa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Simulador Gota Certa</h1>
+    <p>Informe os dados da lavoura e descubra a recomendação sustentável.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="simulador.html" class="ativo">Simulador</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="historico.html">Histórico</a>
+    <a href="boas-praticas.html">Boas Práticas</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="container">
+    <section class="formulario">
+      <h2>Nova Simulação</h2>
+
+      <form id="formSimulador">
+        <div class="form-grid">
+          <div class="campo">
+            <label for="nome">Nome do produtor, aluno ou turma</label>
+            <input type="text" id="nome" required placeholder="Ex: Turma 2º Ano B">
+          </div>
+
+          <div class="campo">
+            <label for="cultura">Cultura plantada</label>
+            <select id="cultura" required>
+              <option value="">Selecione</option>
+              <option value="mandioca">Mandioca</option>
+              <option value="milho">Milho</option>
+              <option value="soja">Soja</option>
+              <option value="hortalicas">Hortaliças</option>
+              <option value="pastagem">Pastagem</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="solo">Tipo de solo</label>
+            <select id="solo" required>
+              <option value="">Selecione</option>
+              <option value="arenoso">Arenoso</option>
+              <option value="misto">Misto</option>
+              <option value="argiloso">Argiloso</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="temperatura">Temperatura atual em °C</label>
+            <input type="number" id="temperatura" min="0" max="60" required placeholder="Ex: 34">
+          </div>
+
+          <div class="campo">
+            <label for="umidade">Umidade do solo</label>
+            <select id="umidade" required>
+              <option value="">Selecione</option>
+              <option value="baixa">Baixa</option>
+              <option value="media">Média</option>
+              <option value="alta">Alta</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="previsaoChuva">Há previsão de chuva?</label>
+            <select id="previsaoChuva" required>
+              <option value="">Selecione</option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="fasePlanta">Fase da planta</label>
+            <select id="fasePlanta" required>
+              <option value="">Selecione</option>
+              <option value="germinacao">Germinação</option>
+              <option value="crescimento">Crescimento</option>
+              <option value="producao">Produção</option>
+              <option value="colheita">Colheita</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="area">Área cultivada em m²</label>
+            <input type="number" id="area" min="1" required placeholder="Ex: 100">
+          </div>
+        </div>
+
+        <div class="botoes">
+          <button type="submit" class="btn">Calcular Recomendação</button>
+          <button type="reset" class="btn btn-vermelho">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultado" class="resultado">
+      <h2>Resultado da Simulação</h2>
+
+      <p><strong>Recomendação:</strong> <span id="resRecomendacao"></span></p>
+      <p><strong>Risco hídrico:</strong> <span id="resRisco"></span></p>
+      <p><strong>Litros economizados:</strong> <span id="resLitros"></span></p>
+      <p><strong>Selo:</strong> <span id="resSelo"></span></p>
+
+      <p><strong>Índice Gota Certa:</strong></p>
+      <div class="barra">
+        <div id="barraIndice" class="barra-preenchida">0%</div>
+      </div>
+
+      <div id="resDica" class="alerta alerta-verde"></div>
+
+      <div class="botoes">
+        <a href="dashboard.html" class="btn btn-verde">Ver Dashboard</a>
+        <a href="historico.html" class="btn">Ver Histórico</a>
+        <button onclick="window.print()" class="btn">Imprimir Relatório</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Gota Certa Icaraíma | Simulador sustentável de irrigação</p>
+  </footer>
+
+  <script src="js/simulador.js"></script>
+</body>
+</html>

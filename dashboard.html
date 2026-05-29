@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Gota Certa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard Ambiental</h1>
+    <p>Resultados das simulações e economia de água.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="dashboard.html" class="ativo">Dashboard</a>
+    <a href="historico.html">Histórico</a>
+    <a href="boas-praticas.html">Boas Práticas</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="container">
+    <section class="cards-dashboard">
+      <div class="metric">
+        <h3>Total de simulações</h3>
+        <strong id="totalSimulacoes">0</strong>
+      </div>
+
+      <div class="metric">
+        <h3>Litros economizados</h3>
+        <strong id="totalLitros">0</strong>
+      </div>
+
+      <div class="metric">
+        <h3>Média do índice</h3>
+        <strong id="mediaIndice">0</strong>
+      </div>
+
+      <div class="metric">
+        <h3>Alertas sustentáveis</h3>
+        <strong id="alertas">0</strong>
+      </div>
+    </section>
+
+    <section class="graficos">
+      <div class="grafico-card">
+        <h3>Culturas mais simuladas</h3>
+        <canvas id="graficoCulturas"></canvas>
+      </div>
+
+      <div class="grafico-card">
+        <h3>Recomendações geradas</h3>
+        <canvas id="graficoRecomendacoes"></canvas>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 24px;">
+      <h3>Ranking sustentável</h3>
+      <p>Participantes com maior economia estimada de água.</p>
+      <ol id="ranking" class="lista"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Gota Certa Icaraíma | Dashboard ambiental</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

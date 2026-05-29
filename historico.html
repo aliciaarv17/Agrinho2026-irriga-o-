@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico | Gota Certa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Histórico de Simulações</h1>
+    <p>Registros salvos pelo backend do projeto.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="historico.html" class="ativo">Histórico</a>
+    <a href="boas-praticas.html">Boas Práticas</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="container">
+    <section class="formulario">
+      <h2>Filtros</h2>
+
+      <div class="filtros">
+        <div class="campo">
+          <label for="filtroCultura">Cultura</label>
+          <select id="filtroCultura">
+            <option value="">Todas</option>
+            <option value="mandioca">Mandioca</option>
+            <option value="milho">Milho</option>
+            <option value="soja">Soja</option>
+            <option value="hortalicas">Hortaliças</option>
+            <option value="pastagem">Pastagem</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="filtroRisco">Risco</label>
+          <select id="filtroRisco">
+            <option value="">Todos</option>
+            <option value="Baixo">Baixo</option>
+            <option value="Moderado">Moderado</option>
+            <option value="Alto">Alto</option>
+            <option value="Crítico">Crítico</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="filtroNome">Nome</label>
+          <input type="text" id="filtroNome" placeholder="Pesquisar">
+        </div>
+
+        <div class="campo">
+          <label>&nbsp;</label>
+          <button class="btn" onclick="aplicarFiltros()">Filtrar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabela-box" style="margin-top: 24px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Nome</th>
+            <th>Cultura</th>
+            <th>Solo</th>
+            <th>Temperatura</th>
+            <th>Recomendação</th>
+            <th>Índice</th>
+            <th>Risco</th>
+            <th>Economia</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+
+        <tbody id="corpoTabela"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Gota Certa Icaraíma | Histórico de simulações</p>
+  </footer>
+
+  <script src="js/historico.js"></script>
+</body>
+</html>
+
